@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tank Problem</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>
+            <h1> Add to a number to input array</h1>
+        </div>
+        <div>
+            <input type="number" min="0" placeholder="Enter a Number"   value="" id="inputvalue"/>
+        </div>
+        <div>
+            <button type="button" onclick="addtoarray();"> Add to Input Array</button>
+        </div>
+        <div>
+            <b><p>Input Array: <span id="spaninputarray"></span></p></b>
+        </div>
+        <div id="generateoutput">
+            <button type="button" onclick="generateoutput();"> Generate Output</button>
+        </div>
+        <div id="inputSVG">
+            <h2 style="text-align: center;">Input View:</h2>
+            <div id="inputView" class="viewsvg">
+                <table id="input" class="table" border="1">
+
+                </table>
+            </div>
+        </div>
+        <div id="outputSVG">
+            <h2 style="text-align: center;">Output View: <span id="waterunits"></span></h2>
+            <div id="outputView" class="viewsvg"> 
+                <table id="output">
+                </table>  
+            </div>
+        </div>
+        
+    <div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
