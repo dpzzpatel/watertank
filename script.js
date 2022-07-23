@@ -24,15 +24,14 @@ const addtoarray = ()=>{
             row.id = 'row' + rowindex;
             input.forEach((value,colindex)=>{
                 var col = row.insertCell(colindex);
-                col.id = 'col' + rowindex.toString() + colindex.toString();
+                col.id = 'row' + rowindex.toString() + 'col'+colindex.toString();
             })
         })
         input.forEach((value,index)=>{
             var height = max - value;
-            console.log(height);
             var colid = index.toString();
             while(height<max){
-                document.getElementById('col'+height.toString()+colid).style.backgroundColor = 'yellow';
+                document.getElementById('row'+height.toString()+'col'+colid).style.backgroundColor = 'yellow';
                 height++;
             }
         })
@@ -43,26 +42,25 @@ const addtoarray = ()=>{
             row.id = 'rowout' + rowindex;
             input.forEach((value,colindex)=>{
                 var col = row.insertCell(colindex);
-                col.id = 'colout' + rowindex.toString() + colindex.toString();
+                col.id = 'rout' + rowindex.toString() + 'cout' +colindex.toString();
             })
         })
         input.forEach((value,index)=>{
             var height = max - value;
-            console.log(height);
             var colid = index.toString();
             while(height<max){
-                document.getElementById('colout'+height.toString()+colid).style.backgroundColor = 'yellow';
+                document.getElementById('rout'+height.toString()+'cout' +colid).style.backgroundColor = 'yellow';
                 height++;
             }
         })
         arr.forEach((value,rowindex)=>{
             input.forEach((value,colindex)=>{
-                if(document.getElementById('colout'+rowindex+colindex).style.backgroundColor !== 'yellow'){
+                if(document.getElementById('rout'+rowindex+'cout' +colindex).style.backgroundColor !== 'yellow'){
                     var leftwall = false;
                     var rightwall = false;
                     var temp = colindex-1;
                     while(temp>=0){
-                        if(document.getElementById('colout'+rowindex+temp).style.backgroundColor === 'yellow'){
+                        if(document.getElementById('rout'+rowindex+'cout' +temp).style.backgroundColor === 'yellow'){
                             leftwall = true;
                             break;
                         }
@@ -70,14 +68,14 @@ const addtoarray = ()=>{
                     }
                     temp = colindex+1;
                     while(temp<input.length){
-                        if(document.getElementById('colout'+rowindex+temp).style.backgroundColor === 'yellow'){
+                        if(document.getElementById('rout'+rowindex+'cout' +temp).style.backgroundColor === 'yellow'){
                             rightwall = true;
                             break;
                         }
                         temp++;
                     }
                     if(rightwall && leftwall){
-                        document.getElementById('colout'+rowindex+colindex).style.backgroundColor = 'blue';
+                        document.getElementById('rout'+rowindex+'cout' +colindex).style.backgroundColor = 'blue';
                         waterunits++;
                     }
                 }
